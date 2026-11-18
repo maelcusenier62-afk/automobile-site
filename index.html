@@ -2,124 +2,232 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AutoWorld - Passion Automobile</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AutoWorld | Catalogue automobile</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        body {
-            background: #101014;
-            color: white;
-            font-family: Arial, sans-serif;
-        }
+body {
+    background: #101116;
+    color: white;
+    font-family: Arial, sans-serif;
+}
 
-        header {
-            padding: 25px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: #17171d;
-        }
+header {
+    background: #191a21;
+    padding: 22px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #30313a;
+}
 
-        .logo {
-            font-size: 27px;
-            font-weight: bold;
-            color: #ff3838;
-        }
+.logo {
+    font-size: 27px;
+    font-weight: bold;
+    color: #ff3838;
+    letter-spacing: 2px;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 25px;
-        }
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+}
 
-        .hero {
-            min-height: 500px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 60px 10%;
-            background:
-            linear-gradient(90deg, #101014 10%, transparent),
-            url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1800");
-            background-size: cover;
-            background-position: center;
-        }
+.hero {
+    padding: 75px 7%;
+    text-align: center;
+    background: linear-gradient(120deg, #20212a, #101116);
+}
 
-        .hero h1 {
-            font-size: 55px;
-            max-width: 600px;
-        }
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 18px;
+}
 
-        .hero p {
-            margin-top: 20px;
-            font-size: 18px;
-        }
+.hero h1 span {
+    color: #ff3838;
+}
 
-        .section {
-            padding: 55px 8%;
-        }
+.hero p {
+    color: #b5b5bd;
+    font-size: 17px;
+}
 
-        .section h2 {
-            font-size: 32px;
-            margin-bottom: 30px;
-            color: #ff3838;
-        }
+.section {
+    padding: 45px 7%;
+}
 
-        .cars {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 25px;
-        }
+.section h2 {
+    font-size: 29px;
+    margin-bottom: 12px;
+}
 
-        .car {
-            background: #202027;
-            border-radius: 12px;
-            overflow: hidden;
-        }
+.subtitle {
+    color: #999ba5;
+    margin-bottom: 25px;
+}
 
-        .car img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-        }
+.search {
+    width: 100%;
+    padding: 17px;
+    background: #20212a;
+    border: 1px solid #383943;
+    border-radius: 9px;
+    color: white;
+    font-size: 16px;
+    outline: none;
+    margin-bottom: 20px;
+}
 
-        .car-content {
-            padding: 20px;
-        }
+.search:focus {
+    border-color: #ff3838;
+}
 
-        .car h3 {
-            margin-bottom: 12px;
-        }
+.filters {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
 
-        .car p {
-            margin: 8px 0;
-            color: #cccccc;
-        }
+.filters button {
+    background: #20212a;
+    color: white;
+    border: 1px solid #383943;
+    padding: 10px 17px;
+    border-radius: 7px;
+    cursor: pointer;
+}
 
-        footer {
-            padding: 25px;
-            text-align: center;
-            background: #17171d;
-            color: #aaa;
-        }
+.filters button.active,
+.filters button:hover {
+    background: #ff3838;
+    border-color: #ff3838;
+}
 
-        @media(max-width: 600px) {
-            .hero h1 {
-                font-size: 38px;
-            }
+.count {
+    color: #aaa;
+    margin-bottom: 20px;
+}
 
-            nav a {
-                margin-left: 10px;
-            }
-        }
-    </style>
+.brands {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(145px, 1fr));
+    gap: 15px;
+}
+
+.brand {
+    background: #1c1d25;
+    border: 1px solid #30313a;
+    border-radius: 10px;
+    min-height: 140px;
+    padding: 18px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.brand:hover {
+    transform: translateY(-5px);
+    border-color: #ff3838;
+    background: #292a34;
+}
+
+.brand img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+}
+
+.brand-name {
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+}
+
+.initial {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: #30313b;
+    color: #ff3838;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 21px;
+}
+
+#details {
+    display: none;
+    background: #20212a;
+    border: 1px solid #ff3838;
+    border-radius: 12px;
+    padding: 25px;
+    margin-top: 30px;
+}
+
+#details h3 {
+    font-size: 25px;
+    margin-bottom: 12px;
+}
+
+#details p {
+    color: #bbb;
+    line-height: 1.6;
+}
+
+#details button {
+    margin-top: 15px;
+    padding: 10px 18px;
+    background: #ff3838;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.empty {
+    color: #aaa;
+    padding: 30px 0;
+    display: none;
+}
+
+footer {
+    background: #191a21;
+    padding: 30px;
+    text-align: center;
+    color: #888;
+    margin-top: 50px;
+}
+
+@media(max-width: 600px) {
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav a {
+        margin: 0 8px;
+    }
+}
+</style>
 </head>
 
 <body>
@@ -128,53 +236,262 @@
     <div class="logo">AUTOWORLD</div>
     <nav>
         <a href="#accueil">Accueil</a>
-        <a href="#voitures">Les voitures</a>
+        <a href="#marques">Marques</a>
     </nav>
 </header>
 
 <section class="hero" id="accueil">
-    <h1>LA PASSION AUTOMOBILE</h1>
-    <p>Découvrez les plus belles voitures du monde.</p>
+    <h1>LE MONDE DE L'<span>AUTOMOBILE</span></h1>
+    <p>Explorez les plus grandes marques automobiles du monde.</p>
 </section>
 
-<section class="section" id="voitures">
-    <h2>Nos voitures</h2>
+<section class="section" id="marques">
 
-    <div class="cars">
+    <h2>Les marques automobiles</h2>
+    <p class="subtitle">Découvrez les constructeurs automobiles du monde entier.</p>
 
-        <div class="car">
-            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800">
-            <div class="car-content">
-                <h3>Porsche 911</h3>
-                <p>Puissance : 388 ch</p>
-                <p>Vitesse maximale : 295 km/h</p>
-                <p>Moteur : 6 cylindres à plat</p>
-            </div>
-        </div>
+    <input
+        type="text"
+        class="search"
+        id="search"
+        placeholder="Rechercher une marque... (ex : Porsche, Ferrari, BMW)"
+    >
 
-        <div class="car">
-            <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?w=800">
-            <div class="car-content">
-                <h3>Lamborghini</h3>
-                <p>Voiture sportive</p>
-                <p>Moteur : V10 ou V12 selon le modèle</p>
-            </div>
-        </div>
-
-        <div class="car">
-            <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800">
-            <div class="car-content">
-                <h3>Voiture sportive</h3>
-                <p>Découvrez prochainement sa fiche technique.</p>
-            </div>
-        </div>
-
+    <div class="filters">
+        <button class="active" data-letter="all">Toutes</button>
+        <button data-letter="A">A</button>
+        <button data-letter="B">B</button>
+        <button data-letter="C">C</button>
+        <button data-letter="D">D</button>
+        <button data-letter="E">E</button>
+        <button data-letter="F">F</button>
+        <button data-letter="G">G</button>
+        <button data-letter="H">H</button>
+        <button data-letter="I">I</button>
+        <button data-letter="J">J</button>
+        <button data-letter="K">K</button>
+        <button data-letter="L">L</button>
+        <button data-letter="M">M</button>
+        <button data-letter="N">N</button>
+        <button data-letter="O">O</button>
+        <button data-letter="P">P</button>
+        <button data-letter="R">R</button>
+        <button data-letter="S">S</button>
+        <button data-letter="T">T</button>
+        <button data-letter="V">V</button>
+        <button data-letter="W">W</button>
+        <button data-letter="X">X</button>
+        <button data-letter="Z">Z</button>
     </div>
+
+    <p class="count" id="count"></p>
+
+    <div class="brands" id="brands"></div>
+
+    <p class="empty" id="empty">Aucune marque trouvée.</p>
+
+    <div id="details">
+        <h3 id="brandTitle"></h3>
+        <p id="brandDescription"></p>
+        <button onclick="closeDetails()">Fermer</button>
+    </div>
+
 </section>
 
 <footer>
-    © 2026 AutoWorld - Site consacré à la passion automobile.
+    © 2026 AutoWorld - Passion Automobile
 </footer>
+
+<script>
+
+const marques = [
+["Abarth","abarth"],
+["Acura","acura"],
+["Alfa Romeo","alfaromeo"],
+["Alpine","alpine"],
+["Aston Martin","astonmartin"],
+["Audi","audi"],
+["Bentley","bentley"],
+["BMW","bmw"],
+["Bugatti","bugatti"],
+["Buick","buick"],
+["BYD","byd"],
+["Cadillac","cadillac"],
+["Caterham","caterham"],
+["Changan","changan"],
+["Chery","chery"],
+["Chevrolet","chevrolet"],
+["Chrysler","chrysler"],
+["Citroën","citroen"],
+["Cupra","cupra"],
+["Dacia","dacia"],
+["Daihatsu","daihatsu"],
+["Dodge","dodge"],
+["DS Automobiles","dsautomobiles"],
+["Ferrari","ferrari"],
+["Fiat","fiat"],
+["Ford","ford"],
+["Genesis","genesis"],
+["GMC","gmc"],
+["Great Wall","greatwall"],
+["Honda","honda"],
+["Hyundai","hyundai"],
+["Infiniti","infiniti"],
+["Isuzu","isuzu"],
+["Jaguar","jaguar"],
+["Jeep","jeep"],
+["Kia","kia"],
+["Koenigsegg","koenigsegg"],
+["KTM","ktm"],
+["Lada","lada"],
+["Lamborghini","lamborghini"],
+["Lancia","lancia"],
+["Land Rover","landrover"],
+["Lexus","lexus"],
+["Lincoln","lincoln"],
+["Lotus","lotus"],
+["Lucid","lucid"],
+["Mahindra","mahindra"],
+["Maserati","maserati"],
+["Maybach","mercedes"],
+["Mazda","mazda"],
+["McLaren","mclaren"],
+["Mercedes-Benz","mercedes"],
+["MG","mg"],
+["Mini","mini"],
+["Mitsubishi","mitsubishi"],
+["Morgan","morgan"],
+["NIO","nio"],
+["Nissan","nissan"],
+["Opel","opel"],
+["Pagani","pagani"],
+["Peugeot","peugeot"],
+["Polestar","polestar"],
+["Pontiac","pontiac"],
+["Porsche","porsche"],
+["Proton","proton"],
+["Ram","ram"],
+["Renault","renault"],
+["Rimac","rimac"],
+["Rivian","rivian"],
+["Rolls-Royce","rollsroyce"],
+["Rover","rover"],
+["Saab","saab"],
+["Seat","seat"],
+["Skoda","skoda"],
+["Smart","smart"],
+["Subaru","subaru"],
+["Suzuki","suzuki"],
+["Tata","tata"],
+["Tesla","tesla"],
+["Toyota","toyota"],
+["Vauxhall","vauxhall"],
+["Volkswagen","volkswagen"],
+["Volvo","volvo"],
+["Wiesmann","wiesmann"],
+["Xpeng","xpeng"],
+["Zeekr","zeekr"]
+];
+
+const container = document.getElementById("brands");
+const search = document.getElementById("search");
+const count = document.getElementById("count");
+const empty = document.getElementById("empty");
+
+let lettreActive = "all";
+
+function afficherMarques() {
+
+    container.innerHTML = "";
+
+    const recherche = search.value.toLowerCase();
+
+    const resultat = marques.filter(m => {
+        const correspondRecherche =
+            m[0].toLowerCase().includes(recherche);
+
+        const correspondLettre =
+            lettreActive === "all" ||
+            m[0].toUpperCase().startsWith(lettreActive);
+
+        return correspondRecherche && correspondLettre;
+    });
+
+    resultat.sort((a,b) => a[0].localeCompare(b[0], "fr"));
+
+    count.textContent = resultat.length + " marque(s) trouvée(s)";
+
+    empty.style.display = resultat.length ? "none" : "block";
+
+    resultat.forEach(m => {
+
+        const carte = document.createElement("div");
+        carte.className = "brand";
+
+        const image = document.createElement("img");
+        image.src = "https://cdn.simpleicons.org/" + m[1];
+        image.alt = "Logo " + m[0];
+
+        const initial = document.createElement("div");
+        initial.className = "initial";
+        initial.textContent = m[0].substring(0,2).toUpperCase();
+
+        image.onerror = () => {
+            image.replaceWith(initial);
+        };
+
+        const nom = document.createElement("div");
+        nom.className = "brand-name";
+        nom.textContent = m[0];
+
+        carte.appendChild(image);
+        carte.appendChild(nom);
+
+        carte.onclick = () => ouvrirDetails(m[0]);
+
+        container.appendChild(carte);
+    });
+}
+
+function ouvrirDetails(nom) {
+    document.getElementById("brandTitle").textContent = nom;
+    document.getElementById("brandDescription").textContent =
+        "Bienvenue dans l'espace consacré à " + nom +
+        ". Le catalogue des modèles et les fiches techniques seront ajoutés dans la prochaine étape.";
+
+    document.getElementById("details").style.display = "block";
+
+    document.getElementById("details").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+function closeDetails() {
+    document.getElementById("details").style.display = "none";
+}
+
+search.addEventListener("input", afficherMarques);
+
+document.querySelectorAll(".filters button").forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        document.querySelector(".filters button.active")
+            .classList.remove("active");
+
+        button.classList.add("active");
+
+        lettreActive = button.dataset.letter;
+
+        afficherMarques();
+    });
+});
+
+afficherMarques();
+
+</script>
 
 </body>
 </html>
+
+        
